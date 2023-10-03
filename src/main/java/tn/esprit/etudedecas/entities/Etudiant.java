@@ -1,11 +1,19 @@
 package tn.esprit.etudedecas.entities;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 
 public class Etudiant implements Serializable {
     @Id
@@ -18,4 +26,6 @@ public class Etudiant implements Serializable {
     private String ecole;
     @Temporal(TemporalType.DATE)
     private Date dateNaissance;
+    @ManyToMany (mappedBy = "listEtudiant",cascade = CascadeType.ALL)
+    private List<Reservation> lisReservation;
 }

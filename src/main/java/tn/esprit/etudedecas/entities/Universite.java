@@ -1,13 +1,17 @@
 package tn.esprit.etudedecas.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
+import jakarta.persistence.*;
+import lombok.*;
+import tn.esprit.etudedecas.entities.Foyer;
 import java.io.Serializable;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 
 public class Universite implements Serializable {
     @Id
@@ -15,5 +19,6 @@ public class Universite implements Serializable {
     private  long idUniversite;
     private  String nomUniversite;
     private  String adresse;
-
+    @OneToOne
+    private Foyer foyer;
 }
