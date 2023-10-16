@@ -18,7 +18,7 @@ import tn.esprit.etudedecas.entities.Universite;
 public class Foyer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long    idFoyer;
+        private long    idFoyer;
     private String nomFoyer;
     private long capaciteFoyer;
     @OneToOne (mappedBy = "foyer")
