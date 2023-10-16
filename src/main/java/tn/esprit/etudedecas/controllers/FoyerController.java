@@ -8,6 +8,8 @@ import tn.esprit.etudedecas.services.FoyerServiceImp;
 import java.util.List;
 
 @RestController
+@RequestMapping("/foyer")
+
 public class FoyerController {
     @Autowired
     private FoyerServiceImp foyerServiceImp;

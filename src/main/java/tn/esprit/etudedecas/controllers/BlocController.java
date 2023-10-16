@@ -1,0 +1,39 @@
+package tn.esprit.etudedecas.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import tn.esprit.etudedecas.entities.Bloc;
+import tn.esprit.etudedecas.services.BlocServiceImp;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/bloc")
+
+public class BlocController {
+    @Autowired
+    private BlocServiceImp blocServiceImp;
+    @PostMapping("/add")
+    public Bloc addFoyer(@RequestBody Bloc f) {
+        return  blocServiceImp.addBloc(f);
+    }
+    @PutMapping("/update")
+    public Bloc updateFoyer(@RequestBody Bloc f) {
+        return  blocServiceImp.updateBloc(f);
+    }
+
+    @GetMapping("/getall")
+    public List<Bloc> findAllFoyer() {
+        return  blocServiceImp.findAllBloc();
+    }
+    @GetMapping("/get/{idF}")
+
+    public Bloc findById(@PathVariable long idF) {
+        return  blocServiceImp.findById(idF);
+    }
+    @DeleteMapping("/getall/{idF}")
+
+    public void deleteFoyer(@PathVariable long idF) {
+        blocServiceImp.deleteBloc(idF);
+    }
+}
