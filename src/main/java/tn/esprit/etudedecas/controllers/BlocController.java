@@ -31,7 +31,7 @@ public class BlocController {
     public Bloc findById(@PathVariable long idF) {
         return  blocServiceImp.findById(idF);
     }
-    @DeleteMapping("/getall/{idF}")
+    @DeleteMapping("/delete/{idF}")
 
     public void deleteFoyer(@PathVariable long idF) {
         blocServiceImp.deleteBloc(idF);

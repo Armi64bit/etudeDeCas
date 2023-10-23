@@ -30,7 +30,7 @@ return  foyerServiceImp.addFoyer(f);
     public Foyer findById(@PathVariable long idF) {
         return  foyerServiceImp.findById(idF);
     }
-    @DeleteMapping("/getall/{idF}")
+    @DeleteMapping("/delete/{idF}")
 
     public void deleteFoyer(@PathVariable long idF) {
           foyerServiceImp.deleteFoyer(idF);

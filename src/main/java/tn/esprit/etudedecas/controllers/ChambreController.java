@@ -30,7 +30,7 @@ public class ChambreController  {
     public Chambre findById(@PathVariable long idF) {
         return  chambreServiceImp.findById(idF);
     }
-    @DeleteMapping("/getall/{idF}")
+    @DeleteMapping("/delete/{idF}")
 
     public void deleteFoyer(@PathVariable long idF) {
         chambreServiceImp.deleteChambre(idF);

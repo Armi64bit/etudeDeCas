@@ -30,7 +30,7 @@ public class ReservationController {
     public Reservation findById(@PathVariable String idF) {
         return  reservationServiceImp.findById(idF);
     }
-    @DeleteMapping("/getall/{idF}")
+    @DeleteMapping("/delete/{idF}")
 
     public void deleteFoyer(@PathVariable String idF) {
         reservationServiceImp.deleteReservation(idF);

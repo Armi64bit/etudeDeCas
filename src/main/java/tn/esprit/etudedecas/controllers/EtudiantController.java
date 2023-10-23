@@ -26,12 +26,12 @@ public class EtudiantController {
     public List<Etudiant> findAllEtudiant() {
         return  etudiantServiceImp.findAllEtudiant();
     }
-    @GetMapping("/get/{idF}")
+    @GetMapping("/get/{idE}")
 
     public Etudiant findByIdE(@PathVariable long idE) {
         return  etudiantServiceImp.findById(idE);
     }
-    @DeleteMapping("/getall/{idF}")
+    @DeleteMapping("/delete/{idE}")
 
     public void deleteEtudiant(@PathVariable long idE) {
         etudiantServiceImp.deleteEtudiant(idE);
