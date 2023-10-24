@@ -1,5 +1,6 @@
 package tn.esprit.etudedecas.controllers;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.etudedecas.entities.Bloc;
@@ -9,9 +10,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/bloc")
-
+@AllArgsConstructor
 public class BlocController {
-    @Autowired
+//    @Autowired
     private BlocServiceImp blocServiceImp;
     @PostMapping("/add")
     public Bloc addFoyer(@RequestBody Bloc f) {

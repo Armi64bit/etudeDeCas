@@ -6,9 +6,10 @@ import tn.esprit.etudedecas.entities.Chambre;
 import tn.esprit.etudedecas.repositories.ChambreRepository;
 
 import java.util.List;
+
 @Service
 
-public class ChambreServiceImp implements IChambre{
+public class ChambreServiceImp implements IChambre {
     @Autowired
 
     private ChambreRepository chambreRepository;
