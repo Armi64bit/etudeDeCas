@@ -1,5 +1,6 @@
 package tn.esprit.etudedecas.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -25,5 +26,6 @@ public class Chambre implements Serializable {
     @OneToMany
     private List<Reservation> listReservation;
     @ManyToOne
+    @JsonIgnore
     private  Bloc bloc;
 }

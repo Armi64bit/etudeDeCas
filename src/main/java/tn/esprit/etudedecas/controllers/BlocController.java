@@ -4,9 +4,11 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.etudedecas.entities.Bloc;
+import tn.esprit.etudedecas.entities.TypeChambre;
 import tn.esprit.etudedecas.services.BlocServiceImp;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/bloc")
@@ -36,5 +38,10 @@ public class BlocController {
 
     public void deleteFoyer(@PathVariable long idF) {
         blocServiceImp.deleteBloc(idF);
+    }
+    @GetMapping("/getblocbytypec/{typC}")
+
+    public Set<Bloc> findBlocByTypeC( @PathVariable  TypeChambre typC){
+        return blocServiceImp.findBlocByChambresType(typC);
     }
 }

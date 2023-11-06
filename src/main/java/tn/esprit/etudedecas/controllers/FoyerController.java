@@ -35,4 +35,9 @@ return  foyerServiceImp.addFoyer(f);
     public void deleteFoyer(@PathVariable long idF) {
           foyerServiceImp.deleteFoyer(idF);
     }
+    @GetMapping("/getbynom/{nomf}")
+
+    public Foyer getByNom(@PathVariable String nomf){
+    return foyerServiceImp.getFoyerByNom(nomf);
+    }
 }

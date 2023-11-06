@@ -5,5 +5,6 @@ import tn.esprit.etudedecas.entities.Foyer;
 
 public interface FoyerRepository extends JpaRepository <Foyer,Long>  {
 
+public Foyer findByNomFoyer(String nomFoyer);
 
 }
