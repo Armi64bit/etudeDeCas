@@ -1,9 +1,11 @@
 package tn.esprit.etudedecas.controllers;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.etudedecas.entities.Bloc;
+import tn.esprit.etudedecas.entities.Chambre;
 import tn.esprit.etudedecas.entities.TypeChambre;
 import tn.esprit.etudedecas.services.BlocServiceImp;
 
@@ -44,4 +46,10 @@ public class BlocController {
     public Set<Bloc> findBlocByTypeC( @PathVariable  TypeChambre typC){
         return blocServiceImp.findBlocByChambresType(typC);
     }
+    @GetMapping("/{blocId}/chambres")
+    @JsonIgnore
+    public List<Chambre> getChambresByBlocId(@PathVariable Long blocId) {
+        return blocServiceImp.getChambresByBlocId(blocId);
+    }
+
 }

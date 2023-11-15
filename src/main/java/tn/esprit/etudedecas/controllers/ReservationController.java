@@ -1,11 +1,13 @@
 package tn.esprit.etudedecas.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.etudedecas.entities.Reservation;
 import tn.esprit.etudedecas.services.ReservationServiceImp;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/reservation")
@@ -34,5 +36,17 @@ public class ReservationController {
 
     public void deleteFoyer(@PathVariable String idF) {
         reservationServiceImp.deleteReservation(idF);
+    }
+
+    @GetMapping("/etudiant/{etudiantId}")
+    public ResponseEntity<List<Reservation>> getReservationsByEtudiantId(@PathVariable long etudiantId) {
+        List<Reservation> reservations = reservationServiceImp.getReservationsByEtudiantId(etudiantId);
+        return ResponseEntity.of(Optional.ofNullable(reservations));
+
+    }
+    @GetMapping("/AB")
+    public ResponseEntity<List<Reservation>> getReservationsForStudentsWithPrefixAB() {
+        List<Reservation> reservations = reservationServiceImp.findReservationsByEtudiantsWithPrefixAB();
+        return ResponseEntity.of(Optional.ofNullable(reservations));
     }
 }

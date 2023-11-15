@@ -3,6 +3,7 @@ package tn.esprit.etudedecas.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.etudedecas.entities.Bloc;
+import tn.esprit.etudedecas.entities.Chambre;
 import tn.esprit.etudedecas.entities.TypeChambre;
 import tn.esprit.etudedecas.repositories.BlocRepository;
 
@@ -35,6 +36,11 @@ public class BlocServiceImp implements IBloc {
     @Override
     public Set<Bloc> findBlocByChambresType(TypeChambre typeC) {
         return blocRepository.findBlocByChambresTypeC(typeC);
+    }
+
+    @Override
+    public List<Chambre> getChambresByBlocId(Long blocId) {
+        return blocRepository.findChambresByBlocId(blocId);
     }
 
     @Override

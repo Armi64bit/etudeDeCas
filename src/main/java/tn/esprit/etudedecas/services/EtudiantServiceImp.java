@@ -3,6 +3,7 @@ package tn.esprit.etudedecas.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.etudedecas.entities.Etudiant;
+import tn.esprit.etudedecas.entities.Reservation;
 import tn.esprit.etudedecas.repositories.EtudiantRepository;
 
 import java.util.List;
@@ -37,5 +38,8 @@ private EtudiantRepository etudiantRepository;
     public void deleteEtudiant(long idE) {
         etudiantRepository.deleteById(idE);
 
+    }
+    public List<Reservation> getReservationsByNomEtudiant(String nomEtudiant) {
+        return etudiantRepository.findReservationsByNomEtudiant(nomEtudiant);
     }
 }
